@@ -1,0 +1,2 @@
+id,repository,revision,scope,mode,prompt
+example,https://github.com/example/service.git,0123456789abcdef0123456789abcdef01234567,src,standard,Review authentication and authorization.

@@ -1,0 +1,9 @@
+=== GHCR probe 2026-11-12 10:20 CST ===
+OK ghcr.io/openai/codex-security:0.9.1 HTTP 200 digest=sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037 DIGEST_MATCH media=application/vnd.oci.image.index.v1+json plats=linux/amd64,linux/arm64 version=0.9.1 revision=fe1089ab5145
+OK ghcr.io/openai/codex-security:latest HTTP 200 digest=sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037 DIGEST_MATCH media=application/vnd.oci.image.index.v1+json plats=linux/amd64,linux/arm64 version=0.9.1 revision=fe1089ab5145
+OK ghcr.io/openai/codex-security:sha-fe1089ab514599931ff0ce77a82dc8c4a99201ea HTTP 200 digest=sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037 DIGEST_MATCH media=application/vnd.oci.image.index.v1+json plats=linux/amd64,linux/arm64 version=0.9.1 revision=fe1089ab5145
+OK ghcr.io/openai/codex-security:0.9.1-wolfi-amd64 HTTP 200 digest=sha256:e3122aeadfc8506cddabe843f9b48f19cd624a5bef72143aad910c982c249585 DIGEST_DIFF media=application/vnd.oci.image.manifest.v1+json plats=n/a version= revision=9792d360be92
+expected_pin_digest=sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037
+Use CODEX_SECURITY_IMAGE=ghcr.io/openai/codex-security@sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037 for a repeatable pull.
+unknown/unknown index entries are SBOM/provenance, not runnable platforms.
+NOTE: the *-wolfi-amd64 tag is a different (amd64-only) image; DIGEST_DIFF vs the Debian multi-arch index is expected.

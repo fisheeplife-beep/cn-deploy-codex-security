@@ -1,0 +1,5 @@
+NOT VERIFIED: Docker Engine is not installed on this host.
+Install Docker 20+ with the Compose v2 plugin, then rerun:
+  ./scripts/clone-upstream.sh && ./scripts/compose-runner-smoke.sh
+
+exit_code=2  # expected on author box: Docker Engine missing (NOT VERIFIED)

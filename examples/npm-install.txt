@@ -1,0 +1,8 @@
+Installing @openai/codex-security@0.9.1 into /workspace/cn-deploy-codex-security/data/npm-prefix (Node v24.22.1, npm 11.21.1)
+This also pulls @openai/codex and may take several minutes on a slow npm mirror.
+
+added 99 packages in 8s
+OK. Binaries:
+lrwxrwxrwx 1 box box 48 Nov 12 10:21 /workspace/cn-deploy-codex-security/data/npm-prefix/node_modules/.bin/codex-security -> ../@openai/codex-security/bin/codex-security.mjs
+lrwxrwxrwx 1 box box 48 Nov 12 10:21 /workspace/cn-deploy-codex-security/data/npm-prefix/node_modules/.bin/cs -> ../@openai/codex-security/bin/codex-security.mjs
+Next: ./scripts/npm-smoke.sh

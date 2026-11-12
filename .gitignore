@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+local/.env
+local/*.token
+data/
+results/
+state/
+repositories.csv
+*.log
+.DS_Store
+node_modules/
+*.tgz

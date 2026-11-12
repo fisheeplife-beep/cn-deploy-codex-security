@@ -1,0 +1,35 @@
+=== verification boundary (author box) ===
+Date: 2026-11-12 Asia/Shanghai (CST, UTC+8)
+Host: Linux x86_64, 8 CPU, ~15 GiB RAM, no Docker Engine, no OpenAI/Codex credentials
+
+Confirmed:
+- Upstream openai/codex-security license Apache-2.0
+- Source pin tag npm-v0.9.1 → commit fe1089ab514599931ff0ce77a82dc8c4a99201ea
+- npm dist-tag latest = 0.9.1 (registry.npmjs.org and registry.npmmirror.com)
+- GHCR Debian multi-arch index digest sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037
+  shared by tags 0.9.1, latest, and sha-fe1089ab514599931ff0ce77a82dc8c4a99201ea
+  platforms: linux/amd64 + linux/arm64
+- Network probes: GitHub / npm / npmmirror HTTP 200; GHCR anon 401 (token exchange works);
+  api.openai.com, chatgpt.com, developers.openai.com, learn.chatgpt.com HTTP 403 on this box
+- Shallow clone via scripts/clone-upstream.sh
+- Path B: npm install @openai/codex-security@0.9.1 into data/npm-prefix (gitignored)
+  CLI --version = 0.9.1; info --json reports cliVersion 0.9.1 and bundled @openai/codex 0.167.0
+
+Not verified on author box:
+- Path A: docker pull of the pinned digest + compose.runner.yaml --version/--help
+- Real repository scan (CLI or Compose), including --headless and Deep Scan
+- compose.yaml bulk-scan campaign (CSV was only prepared; placeholder revision not used)
+- GitHub Action action-v0.9.1
+- ChatGPT login / device-auth / login --with-api-key (no credentials present)
+- Alternative providers (Bedrock / OpenRouter / Fireworks / Cheaper Inference)
+- AppArmor override, Bubblewrap sandbox, bind-mount permission matrix on a real Docker host
+
+Differentiation vs official English docs and yangshun2005/codex-security-cn:
+- Official docs already cover Compose, image attestation, and auth in English.
+- The 2026-08-19 translation repo is a README translation, not a measured deploy guide,
+  and predates the 0.9.1 runner / digest / bind-mount details documented here.
+- This companion adds China npm/GHCR/OpenAI reachability, digest pinning,
+  runner vs bulk default-image pitfall, bind-mount create_host_path/UID notes,
+  and an honest verification table.
+
+Upstream Issue: skipped (avoid spam on the OpenAI repo with a Chinese companion link).

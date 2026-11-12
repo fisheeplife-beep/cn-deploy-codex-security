@@ -1,0 +1,17 @@
+=== Codex Security network probe 2026-11-12 10:20 CST ===
+GitHub repo	HTTP 200	https://github.com/openai/codex-security
+GitHub release npm-v0.9.1	HTTP 200	https://github.com/openai/codex-security/releases/tag/npm-v0.9.1
+GitHub docker README raw	HTTP 200	https://raw.githubusercontent.com/openai/codex-security/npm-v0.9.1/docker/README.md
+npm registry	HTTP 200	https://registry.npmjs.org/@openai/codex-security
+npm tarball 0.9.1	HTTP 200	https://registry.npmjs.org/@openai/codex-security/-/codex-security-0.9.1.tgz
+npmmirror	HTTP 200	https://registry.npmmirror.com/@openai/codex-security
+GHCR v2 (anon)	HTTP 401	https://ghcr.io/v2/openai/codex-security/manifests/0.9.1
+api.openai.com /v1/models	HTTP 403	https://api.openai.com/v1/models
+chatgpt.com	HTTP 403	https://chatgpt.com
+developers.openai.com	HTTP 403	https://developers.openai.com/codex/security
+learn.chatgpt.com CLI docs	HTTP 403	https://learn.chatgpt.com/docs/security/cli
+Notes:
+- GHCR /v2 without a bearer token commonly returns HTTP 401; use ./scripts/probe-ghcr.sh.
+- Official OpenAI / ChatGPT sites may return 403 (bot or regional policy). A 403 here is not a scan success.
+- Yangshun translation repo (for contrast, not a dependency):
+yangshun2005/codex-security-cn	HTTP 200	https://github.com/yangshun2005/codex-security-cn

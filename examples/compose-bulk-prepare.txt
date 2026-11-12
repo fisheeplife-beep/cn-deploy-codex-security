@@ -1,0 +1,25 @@
+results=/workspace/cn-deploy-codex-security/data/lab/results
+state=/workspace/cn-deploy-codex-security/data/lab/state
+NOTE: state/ can hold login credentials after device-auth or login --with-api-key.
+Keep it private; do not copy it into a git worktree you will push.
+copied example CSV → /workspace/cn-deploy-codex-security/data/lab/repositories.csv
+WARNING: the example row uses a placeholder repo/revision. Edit it before a real bulk-scan.
+
+IMPORTANT: compose.yaml defaults to image codex-security:local and will try to BUILD
+unless you set CODEX_SECURITY_IMAGE to the published GHCR digest.
+
+From /workspace/cn-deploy-codex-security/data/upstream-codex-security, after editing /workspace/cn-deploy-codex-security/data/lab/repositories.csv:
+export CODEX_SECURITY_USER='1000:1000'
+export CODEX_SECURITY_IMAGE='ghcr.io/openai/codex-security@sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037'
+export CODEX_SECURITY_RESULTS='/workspace/cn-deploy-codex-security/data/lab/results'
+export CODEX_SECURITY_STATE='/workspace/cn-deploy-codex-security/data/lab/state'
+export CODEX_SECURITY_CSV='/workspace/cn-deploy-codex-security/data/lab/repositories.csv'
+# For unattended runs, also export OPENAI_API_KEY or CODEX_API_KEY (not printed here).
+cd '/workspace/cn-deploy-codex-security/data/upstream-codex-security'
+docker compose pull
+# Optional login (device-auth must be allowed on the workspace):
+# docker compose run --rm codex-security login --device-auth
+docker compose run --rm codex-security
+
+On Ubuntu hosts that block nested user namespaces, install the AppArmor profile
+from upstream docker/codex-security.apparmor and add -f compose.apparmor.yaml.

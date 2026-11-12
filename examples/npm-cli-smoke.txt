@@ -1,0 +1,50 @@
+=== npm CLI smoke 2026-11-12 10:21 CST ===
+bin=/workspace/cn-deploy-codex-security/data/npm-prefix/node_modules/.bin/codex-security
+node=v24.22.1
+--- --version ---
+0.9.1
+--- --help (first 40 lines) ---
+codex-security@0.9.1
+Find, review, and fix security issues in your code.
+
+Usage: codex-security <command>
+Aliases: cs
+
+Get started:
+  codex-security login
+
+  In your repository, draft SECURITY.md (optional):
+  codex-security policy .
+  Review the diff and notes. Edit the draft, then copy only SECURITY.md to the
+  Policy target shown.
+  Skip this step to keep your existing policy or scan without one.
+
+  codex-security scan .
+  codex-security findings
+
+Scan and fix:
+  scan        Scan a repository, selected paths, or Git changes.
+  policy      Draft SECURITY.md for review.
+  validate    Assess candidate security findings using source evidence only.
+  patch       Patch one or more security issues.
+  verify-fix  Verify existing security fixes without changing the repository.
+
+Review and share:
+  scans              Review saved scans (default: list).
+  findings           Review saved findings (default: list).
+  classify-severity  Assess severity for saved findings or canonical records.
+  dedupe             Identify duplicate findings in a saved scan.
+  suggest-owners     Suggest finding owners from CODEOWNERS and Git history.
+  export             Export saved findings or a threat model without running an
+                     analysis.
+  import             Import Sonar security issues or read hosted Semgrep, Snyk,
+                     and GitHub findings.
+  publish            Publish Codex Security findings.
+
+Automate:
+  bulk-scan        Discover and scan multiple repositories.
+  scan-components  Scan project components and combine results.
+--- info --json (selected fields) ---
+{'sdkVersion': '0.9.1', 'cliVersion': '0.9.1', 'codexVersion': '0.167.0', 'codexSdkVersion': '0.167.0', 'bundledPluginVersion': '0.1.95', 'model': 'gpt-5.6-sol', 'reasoningEffort': 'xhigh'}
+OK: local CLI answered --version/--help/info (no scan was performed).
+A real scan still needs 'cs login' or OPENAI_API_KEY / CODEX_API_KEY, and a reachable provider endpoint.

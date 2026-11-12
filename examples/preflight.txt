@@ -1,0 +1,35 @@
+=== Codex Security CN preflight (Compose/GHCR + npm/CLI) ===
+
+Host: Linux x86_64
+Time: 2026-11-12 10:20 CST
+Pin: npm 0.9.1 / git npm-v0.9.1 / image digest sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037
+Note: this is a CLI/CI scanner, not a long-running self-hosted service.
+
+✅ CPU arch x86_64 (GHCR Debian image is linux/amd64 + linux/arm64)
+✅ CPUs 8
+✅ RAM available ~7 GiB (total ~15 GiB)
+✅ Disk free ~107 GB
+✅ git present
+✅ curl present
+✅ jq present
+✅ python3: Python 3.13.5 (≥3.10)
+✅ node: v24.22.1 (engines: ^22.13 || ^24 || ^26)
+✅ npm: 11.21.1
+❌ Docker Engine missing — path A (GHCR / Compose runner) needs Docker 20+ with Compose v2
+⚠️  No OPENAI_API_KEY / CODEX_API_KEY in this shell — --help/--version work without it; real scans need login or a key
+
+--- network (best-effort) ---
+✅ Reachable: GitHub openai/codex-security (HTTP 200)
+✅ Reachable: GitHub release npm-v0.9.1 (HTTP 200)
+✅ Reachable: npm registry 0.9.1 (HTTP 200)
+✅ Reachable: npmmirror 0.9.1 (HTTP 200)
+✅ Reachable: GHCR manifests (anon, 401 expected) (HTTP 401)
+✅ Reachable: api.openai.com (HTTP 403)
+✅ Reachable: developers.openai.com docs (HTTP 403)
+
+=== summary: 17 ok / 1 warn / 1 bad ===
+Path A needs Docker Compose + GHCR pull + a login or API key for a real scan.
+Path B needs Node engines above + npm + the same credentials.
+HTTP 401 on GHCR without a bearer token is normal; use ./scripts/probe-ghcr.sh to complete the anonymous token exchange.
+
+exit_code=1  # expected on author box: Docker Engine missing

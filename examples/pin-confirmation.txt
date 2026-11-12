@@ -1,0 +1,14 @@
+=== pin confirmation 2026-11-12 10:21 CST ===
+source_tag=npm-v0.9.1
+source_commit=fe1089ab514599931ff0ce77a82dc8c4a99201ea
+npm_package=@openai/codex-security@0.9.1
+npm_latest_dist_tag=0.9.1
+ghcr_image=ghcr.io/openai/codex-security:0.9.1
+ghcr_index_digest=sha256:947961462b918b4fa830d89772971b9a4d1423c79bd5489d5a2b33d4c6dd9037
+ghcr_same_digest_tags=0.9.1, latest, sha-fe1089ab514599931ff0ce77a82dc8c4a99201ea
+ghcr_platforms=linux/amd64, linux/arm64
+ghcr_oci_version_annotation=0.9.1
+ghcr_oci_revision_annotation=fe1089ab514599931ff0ce77a82dc8c4a99201ea
+action_release=action-v0.9.1
+upstream_license=Apache-2.0
+note=git tag npm-v0.10.0 existed on 2026-11-12 (commit f465432bc4c8, "chore(release): 0.10.0") but had no GitHub Release and was not published to npm or GHCR; this companion does not pin it.
